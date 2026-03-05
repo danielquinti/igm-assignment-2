@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ihi51us6scvs"]
+
+[ext_resource type="Texture2D" uid="uid://cxcpgsndf2qa6" path="res://Metal053B_1K-PNG_Color.png" id="1_ugoep"]
+[ext_resource type="Texture2D" uid="uid://b80i01sxfgkjj" path="res://Metal053B_1K-PNG_Metalness.png" id="2_6ubm8"]
+[ext_resource type="Texture2D" uid="uid://bhywd7halru2q" path="res://Metal053B_1K-PNG_Roughness.png" id="3_ydmna"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4oua"]
+albedo_texture = ExtResource("1_ugoep")
+metallic = 1.0
+metallic_texture = ExtResource("2_6ubm8")
+roughness = 0.2
+roughness_texture = ExtResource("3_ydmna")
+
+[sub_resource type="SphereMesh" id="SphereMesh_5qy7q"]
+material = SubResource("StandardMaterial3D_x4oua")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8pulh"]
+
+[node name="sphere2" type="StaticBody3D" unique_id=51095807]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=827172918]
+mesh = SubResource("SphereMesh_5qy7q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2105709052]
+shape = SubResource("SphereShape3D_8pulh")

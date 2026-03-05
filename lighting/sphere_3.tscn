@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://01kfn1jxx6nf"]
+
+[ext_resource type="Shader" uid="uid://bup0bavip0m7o" path="res://sphere_3.gdshader" id="1_hwuob"]
+[ext_resource type="Texture2D" uid="uid://oxw7yo2bu1po" path="res://Bark015_1K-PNG_Color.png" id="2_0i3jo"]
+[ext_resource type="Texture2D" uid="uid://bvjgawqsc2ctu" path="res://Bark015_1K-PNG_Specular.png" id="3_0i3jo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rh731"]
+render_priority = 0
+shader = ExtResource("1_hwuob")
+shader_parameter/textura_albedo = ExtResource("2_0i3jo")
+shader_parameter/textura_especular = ExtResource("3_0i3jo")
+shader_parameter/color_luz_ambiente = Color(0.49747366, 0.49747366, 0.49747366, 1)
+shader_parameter/ka = 0.800000038
+shader_parameter/kd = 0.400000019
+shader_parameter/ks = 0.02000000095
+shader_parameter/exponente_brillo = 2.0000000475
+
+[sub_resource type="SphereMesh" id="SphereMesh_5qy7q"]
+material = SubResource("ShaderMaterial_rh731")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8pulh"]
+
+[node name="sphere3" type="StaticBody3D" unique_id=51095807]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=827172918]
+mesh = SubResource("SphereMesh_5qy7q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2105709052]
+shape = SubResource("SphereShape3D_8pulh")

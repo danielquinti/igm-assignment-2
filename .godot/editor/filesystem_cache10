@@ -1,0 +1,10 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1772731817
+box.tscn::PackedScene::234313526983229649::1772731350::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D::3685644869805681394::1772728765::1772728768::1::::<><><>0<>0<>5586e3c5ed807e4677cd4cf6f7024317<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+level_1.tscn::PackedScene::175162816994709573::1772731297::0::1::::<><><>0<>0<><>::uid://dlrdyv8ljkgf::::res://box.tscn<>uid://bxfhrw7rg3fdg::::res://prism.tscn<>uid://lrjyey0if06y::::res://prism_2.tscn<>uid://bfq4b3pycgkee::::res://sphere.tscn<>uid://01kfn1jxx6nf::::res://sphere_3.tscn<>uid://ihi51us6scvs::::res://sphere2.tscn
+prism.tscn::PackedScene::4011542559312864352::1772730309::0::1::::<><><>0<>0<><>::
+prism_2.tscn::PackedScene::807761262141497442::1772730882::0::1::::<><><>0<>0<><>::
+sphere2.tscn::PackedScene::576502100505122724::1772730941::0::1::::<><><>0<>0<><>::
+sphere.tscn::PackedScene::2772159019451592388::1772730689::0::1::::<><><>0<>0<><>::
+sphere_3.tscn::PackedScene::1809011734862614403::1772730956::0::1::::<><><>0<>0<><>::

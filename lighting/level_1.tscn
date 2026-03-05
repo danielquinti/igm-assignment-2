@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://cq352lufj4sv"]
+
+[ext_resource type="PackedScene" uid="uid://dlrdyv8ljkgf" path="res://box.tscn" id="1_hbghi"]
+[ext_resource type="Script" uid="uid://b8pfkawfegkbv" path="res://cameracontrol.gd" id="1_j7kpp"]
+[ext_resource type="PackedScene" uid="uid://bxfhrw7rg3fdg" path="res://prism.tscn" id="2_hn12h"]
+[ext_resource type="PackedScene" uid="uid://lrjyey0if06y" path="res://prism_2.tscn" id="3_5hph3"]
+[ext_resource type="PackedScene" uid="uid://bfq4b3pycgkee" path="res://sphere.tscn" id="3_hn12h"]
+[ext_resource type="PackedScene" uid="uid://01kfn1jxx6nf" path="res://sphere_3.tscn" id="4_j7kpp"]
+[ext_resource type="PackedScene" uid="uid://ihi51us6scvs" path="res://sphere2.tscn" id="5_bjebc"]
+[ext_resource type="Script" uid="uid://bypg8iv7ca7bo" path="res://fps_camera.gd" id="8_bjebc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5hph3"]
+sky_top_color = Color(0.8833968, 0.90660244, 1, 1)
+sky_horizon_color = Color(0.572966, 0.56829506, 0.5840309, 1)
+
+[sub_resource type="Sky" id="Sky_j7kpp"]
+sky_material = SubResource("ProceduralSkyMaterial_5hph3")
+
+[sub_resource type="Environment" id="Environment_5hph3"]
+background_mode = 2
+sky = SubResource("Sky_j7kpp")
+
+[node name="Level1" type="Node3D" unique_id=313515905 node_paths=PackedStringArray("cameras", "lights", "world_environment")]
+script = ExtResource("1_j7kpp")
+cameras = [NodePath("OuterCamera"), NodePath("InnerCamera"), NodePath("FPSCamera")]
+lights = [NodePath("DirectionalLight3D"), NodePath("OmniLight3DSide"), NodePath("OmniLight3DUpper")]
+world_environment = NodePath("WorldEnvironment")
+
+[node name="box" parent="." unique_id=505967683 instance=ExtResource("1_hbghi")]
+
+[node name="prism" parent="." unique_id=1893144554 instance=ExtResource("2_hn12h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.223413, 1.2741294, -1.2378628)
+
+[node name="prism2" parent="." unique_id=1336099506 instance=ExtResource("3_5hph3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9352901, 1.2497554, -1.8351498)
+
+[node name="sphere" parent="." unique_id=2042198192 instance=ExtResource("3_hn12h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6762853, 0.8168256, 1.6859553)
+
+[node name="sphere2" parent="." unique_id=1594193562 instance=ExtResource("5_bjebc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14788699, 0.80997133, 1.6859553)
+
+[node name="sphere3" parent="." unique_id=51095807 instance=ExtResource("4_j7kpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.941885, 0.80874205, 1.6859553)
+
+[node name="OmniLight3DSide" type="OmniLight3D" parent="." unique_id=1267079326]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2559972, 2.625052, 0.10361791)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="OmniLight3DUpper" type="OmniLight3D" parent="." unique_id=1289296878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06621814, 2.8738594, 1.9265561)
+shadow_enabled = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1164280392]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0.35296082, 7.126061, 12.520725)
+light_energy = 1.5
+shadow_enabled = true
+
+[node name="OuterCamera" type="Camera3D" parent="." unique_id=1136559054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14788699, 2.8738594, 8.7593)
+
+[node name="InnerCamera" type="Camera3D" parent="." unique_id=632106207]
+transform = Transform3D(1, 0, 0, 0, 0.8857747, 0.4641156, 0, -0.4641156, 0.8857747, -0.14788699, 4.3095512, 5.2235765)
+
+[node name="FPSCamera" type="Camera3D" parent="." unique_id=614503742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14788699, 2.8738594, 8.7593)
+script = ExtResource("8_bjebc")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=45694221]
+environment = SubResource("Environment_5hph3")
